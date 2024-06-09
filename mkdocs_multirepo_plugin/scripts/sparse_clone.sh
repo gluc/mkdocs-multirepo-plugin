@@ -19,7 +19,7 @@ else
   url_to_use="$url"
 fi
 
-git clone --branch "$branch" --depth 1 --filter=blob:none --sparse $url_to_use "$name" || exit 1
+git clone --branch "$branch" --filter=blob:none --sparse $url_to_use "$name" || exit 1
 cd "$name"
 git sparse-checkout set --no-cone ${dirs[*]}
 rm -rf .git
